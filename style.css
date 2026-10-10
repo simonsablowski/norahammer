@@ -209,8 +209,10 @@ strong{color:inherit}
   .js .site-header.menu-open>.in>:last-child{display:block}
   .site-header .nav{flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:.25rem}
   .site-header .nav>li{text-align:left}
-  .site-header .nav a{display:block;padding:.8em 1em;border-radius:1rem}
-  .site-header .nav>li:last-child a{margin:.5rem 0 0;text-align:center}
+  .site-header .nav a{display:block;padding:.8em 0}
+  .site-header .nav a:hover{background:none;color:var(--accent)}
+  .site-header .nav>li:last-child a{display:inline-block;margin:.5rem 0 0;padding:.7em 1.5em}
+  .site-header .nav>li:last-child a:hover{background:var(--accent-dark);color:#fff}
   .site-header>.in{padding-right:calc(var(--px) + 2.4rem)}
 }
 
