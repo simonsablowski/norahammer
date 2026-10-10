@@ -197,6 +197,23 @@ strong{color:inherit}
 .contact-list .t-card{overflow-wrap:anywhere}
 .contact-list a{color:var(--accent-dark)}
 
+/* ---------- burger menu (phones) ---------- */
+.nav-toggle{display:none}
+@media (max-width:736px){
+  .js .nav-toggle{display:block;position:absolute;z-index:2;top:calc(var(--py) - .5rem);right:calc(var(--px) - .9rem);width:3.3rem;height:3.3rem;padding:0;border:0;background:none;cursor:pointer;color:var(--ink);-webkit-tap-highlight-color:transparent}
+  .nav-toggle .bar{display:block;width:1.5rem;height:2px;margin:.3rem auto;border-radius:2px;background:currentColor;transition:transform .25s ease,opacity .2s ease}
+  .nav-toggle[aria-expanded=true] .bar:nth-child(1){transform:translateY(calc(.3rem + 2px)) rotate(45deg)}
+  .nav-toggle[aria-expanded=true] .bar:nth-child(2){opacity:0}
+  .nav-toggle[aria-expanded=true] .bar:nth-child(3){transform:translateY(calc(-.3rem - 2px)) rotate(-45deg)}
+  .js .site-header>.in>:last-child{display:none}
+  .js .site-header.menu-open>.in>:last-child{display:block}
+  .site-header .nav{flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:.25rem}
+  .site-header .nav>li{text-align:left}
+  .site-header .nav a{display:block;padding:.8em 1em;border-radius:1rem}
+  .site-header .nav>li:last-child a{margin:.5rem 0 0;text-align:center}
+  .site-header>.in{padding-right:calc(var(--px) + 2.4rem)}
+}
+
 /* ---------- reveal-on-scroll (buttons slide down, photos fade in) ---------- */
 .js .reveal-buttons{opacity:0;transform:translateY(-.6375rem)}
 .js .reveal-photo{opacity:0}

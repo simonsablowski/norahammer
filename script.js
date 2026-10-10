@@ -95,6 +95,27 @@
     }
   });
 
+  /* ---------- burger menu (phones) ---------- */
+  var header = document.querySelector('.site-header');
+  var toggle = header && header.querySelector('.nav-toggle');
+  function setMenu(open) {
+    header.classList.toggle('menu-open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+  }
+  if (toggle) {
+    toggle.addEventListener('click', function () { setMenu(!header.classList.contains('menu-open')); });
+    header.addEventListener('click', function (event) {
+      var a = event.target.closest && event.target.closest('a');
+      if (a && header.classList.contains('menu-open')) setMenu(false);
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && header.classList.contains('menu-open')) { setMenu(false); toggle.focus(); }
+    });
+    window.addEventListener('hashchange', function () { setMenu(false); });
+    window.matchMedia('(min-width: 737px)').addEventListener('change', function (m) { if (m.matches) setMenu(false); });
+  }
+
   /* ---------- page fade-in once everything is loaded ---------- */
   window.addEventListener('load', function () {
     setTimeout(function () { body.classList.remove('is-loading'); }, 100);
