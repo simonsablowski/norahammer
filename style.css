@@ -191,21 +191,11 @@ strong{color:inherit}
 .list>li>p{order:3;flex:1 1 0}
 .list a:hover{text-decoration:none}
 
-/* ---------- form ---------- */
-.form{display:flex;flex-flow:column wrap;width:25rem;max-width:100%;text-align:left;font-family:var(--sans-pro)}
-.form>*{margin:1.5rem 0 0;max-width:100%}
-.form>:first-child{margin:0}
-.form input[type=text],.form input[type=email],.form textarea{display:block;width:100%;appearance:none;-webkit-appearance:none;background:transparent;outline:0;border:1px solid var(--list);border-radius:.25rem;color:var(--list);font:400 1em/1 var(--sans-pro);text-align:left}
-.form input[type=text],.form input[type=email]{height:3rem;padding:0 1.05rem;line-height:calc(3rem - 2px)}
-.form textarea{height:12rem;padding:.678125rem 1.05rem 1.05rem;line-height:2.125}
-.form ::placeholder{color:var(--list);opacity:.55}
-.form input[type=checkbox]{appearance:none;-webkit-appearance:none;display:block;float:left;width:1rem;margin-right:-2rem;opacity:0;z-index:-1}
-.form label{display:inline-flex;align-items:center;font:400 1em/1.5 var(--sans-pro);color:var(--list);line-height:1.5}
-.form label::before{content:'';display:inline-block;flex:0 0 auto;width:2.25rem;height:2.25rem;margin-right:1.125rem;border:1px solid var(--list);border-radius:.25rem;background:center/1.275rem no-repeat;vertical-align:middle;cursor:pointer}
-.form input[type=checkbox]:checked+label::before{background-image:url(assets/icons/check.svg)}
-.form .actions{max-width:100%}
-.form button{display:inline-block;position:relative;width:8rem;max-width:100%;height:3rem;padding:0 .5rem;border:0;border-radius:.25rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:middle;cursor:pointer;line-height:3rem;font:400 1em/3rem var(--sans-pro);color:#fff;background-color:#c275ff;background-image:linear-gradient(45deg,#8000ff 0%,rgba(194,117,255,.01) 100%);background-size:cover;transition:color .25s,background-color .25s,border-color .25s}
-.form button:disabled{cursor:default;opacity:.35;pointer-events:none}
+/* ---------- contact details ---------- */
+.contact-list>li+li{margin-top:1.75rem}
+.contact-list .t-eyebrow{margin-bottom:.5rem}
+.contact-list .t-card{overflow-wrap:anywhere}
+.contact-list a{color:var(--accent-dark)}
 
 /* ---------- reveal-on-scroll (buttons slide down, photos fade in) ---------- */
 .js .reveal-buttons{opacity:0;transform:translateY(-.6375rem)}
@@ -259,7 +249,6 @@ strong{color:inherit}
 @media (max-width:480px){
   .column{--spacing:1.75rem}
   .site-header{--gap:.75rem}.hero{--gap:1.18125rem}.band{--gap:1.05rem}.cta{--gap:.65625rem}.site-footer{--gap:2.078125rem}
-  .form .actions button{max-width:32rem;width:100%}
 }
 @media (max-width:360px){
   .column{--spacing:1.5rem}
